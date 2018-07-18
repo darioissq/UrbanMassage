@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  UrbanMap
+
+  Created by Dario Langella on 15/07/2018.
+  Copyright © 2018 Dario Langella. All rights reserved.
+*/
+"NetworkErrorTitle" = "Error";
+"NetworkErrorDescription" = "An error occured";
+"AlwaysAllowErrorTitle" = "Error";
+"AlwaysAllowErrorDescription" = "You need to share your always location in order to make it works";
+"LocationError" = "You need to share your location in order to make it works";

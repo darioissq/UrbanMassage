@@ -1,0 +1,6 @@
+framework module Pods_UrbanMap {
+  umbrella header "Pods-UrbanMap-umbrella.h"
+
+  export *
+  module * { export * }
+}

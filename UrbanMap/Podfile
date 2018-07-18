@@ -1,0 +1,20 @@
+#
+#   Created by : Dario Langella
+#   July 2018, London
+#
+
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '11.0'
+use_frameworks!
+
+# Pods
+def core_pods
+    # Web Requests
+    pod 'Alamofire'
+end
+
+
+target 'UrbanMap' do
+    inhibit_all_warnings!
+    core_pods
+end
