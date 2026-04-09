@@ -10,13 +10,26 @@ import Foundation
 import Alamofire
 
 class Networking {
+    /// Shared Alamofire `SessionManager` configured with the app-wide request and resource timeouts
+    /// defined in `Constants.Request.TimeOut`.
     static let alamofireManager: SessionManager = {
         let sessionConfiguration = URLSessionConfiguration.default
         sessionConfiguration.timeoutIntervalForRequest = TimeInterval(Constants.Request.TimeOut)
         sessionConfiguration.timeoutIntervalForResource = TimeInterval(Constants.Request.TimeOut)
         return Alamofire.SessionManager(configuration: sessionConfiguration)
     }()
-    
+
+    /// Performs an HTTP request using the shared Alamofire session.
+    ///
+    /// - Parameters:
+    ///   - url: The full URL string of the endpoint.
+    ///   - method: HTTP method to use (default: `.post`).
+    ///   - parameters: Key-value pairs to encode in the request (default: empty).
+    ///   - encoding: Parameter encoding strategy (default: `URLEncoding.default`).
+    ///   - contentType: Optional `Content-Type` header value.
+    ///   - headers: Additional HTTP headers to include (default: empty).
+    ///   - success: Called with the raw response `Data` on a successful, validated response.
+    ///   - failure: Called with an `Error` if the request or validation fails.
     static func performRequest(url: String,
                                method: HTTPMethod = .post,
                                parameters: [String: Any] = [String: Any](),

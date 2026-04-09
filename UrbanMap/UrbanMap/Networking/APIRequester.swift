@@ -11,12 +11,13 @@ import Alamofire
 import CoreLocation
 
 class APIRequester {
-    
-    /// Get Marvel Comics Array
+
+    /// Uploads the device's current coordinates to the remote API endpoint.
     ///
     /// - Parameters:
-    ///   - marvelComics: MarvelComicsObject Array
-    ///   - failure: Error
+    ///   - coordinates: The latitude/longitude to send.
+    ///   - response: Called with `true` when the server accepts the request.
+    ///   - failure: Called with the underlying `Error` if the request fails.
     static func postLocation(coordinates: CLLocationCoordinate2D, response : @escaping(Bool)->(), failure: @escaping(Error)->()) {
         
         let url = "\(Constants.App.BaseURL)" + "\(Constants.APIEndPoint.SendLocation)"
